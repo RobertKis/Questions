@@ -1,0 +1,29 @@
+﻿@model PairingTest.Web.Models.QuestionnaireViewModel
+
+<html>
+    <head>
+        <title>@Model.QuestionnaireTitle</title>
+        @Styles.Render("~/CSS/bootstrap.min.css")
+        @Styles.Render("~/CSS/bootstrap-theme.min.css")
+        @Scripts.Render("~/Scripts/bootstrap.min.js")
+    </head>
+    <body class="container">
+              @Model.QuestionnaireTitle
+        <div class="row">
+            <div class="panel panel-primary">
+                @{
+                    foreach (var text in Model.QuestionsText)
+                    {
+                        <ul style="list-style: none">
+                            <li>
+                                <span class="label label-default">@text</span>
+                                <input type="text" class="form-control" placeholder="Insert correct answer" aria-describedby="basic-addon1">
+                            </li>
+                        </ul>
+                    }
+                    <button type="button" class="btn btn-default navbar-btn" style="float: right">Submit asnwers</button>
+                }
+            </div>
+        </div>
+</body>
+</html>
